@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-2.2.3.min.js"></script>
+</head>
+<body>
+<div id="outer" style="width:200px;height:200px;position:relative;left:100px;background-color: #2DCB70">
+    <div id="inner" style="width:200px;height:200px;position:absolute;left:50px;top:60px;background-color: red">
+    </div>
+</div>
+<script>
+    //获取相对于最近的父级(position:relative)的位置
+    var vposition = $("#inner").position();
+    alert(vposition.left);   //输出：50
+    alert(vposition.top);    //输出：60
+
+    var voffset = $("#inner").offset();
+    alert(voffset.left);   //输出：$("#outer").offset().left+50
+    alert(voffset.top);    //输出：$("#outer").offset().top+60
+</script>
+</body>
+</html>
